@@ -6,12 +6,12 @@ public class onSocialForCreatEmployee : MonoBehaviour {
     public GameObject myNoJobMan;
     public GameObject myAirTicket;
     public GameObject myMoney;
-    public GameObject[] myMoneyList;
+    public int myMoneyCounter;
     public bool isNeedCreatMoney;
     // Use this for initialization
     void Start () {
         myNoJobManCreaterFN();
-        myMoneyCounterFN();
+        myMoneyCreater_FN();
         //GameObject.FindGameObjectWithTag("boss").GetComponent<onMyController>().SendMessage("myFindEmployeeFN");
     }
 	
@@ -19,12 +19,7 @@ public class onSocialForCreatEmployee : MonoBehaviour {
 	void Update () {
         if (GameObject.Find("unemployment") == null) { myNoJobManCreaterFN(); }
         //myMoneyCounterFN();
-	}
-    public void myMoneyCounterFN() {
-        myMoneyList = GameObject.FindGameObjectsWithTag("money");
-        if (myMoneyList.Length < 50) {
-            myMoneyCreater_FN();
-        }
+        if (myMoneyCounter < 50){myMoneyCreater_FN();}
     }
     public void myNoJobManCreaterFN() {
         int a = Random.Range(0, 11);
@@ -75,11 +70,13 @@ public class onSocialForCreatEmployee : MonoBehaviour {
     }
     public void myMoneyCreater_FN() {
         for (int a = 0; a < 10; a++) {
+            myMoneyCounter++;
             Vector3 spawnPoint = gameObject.transform.position;
             spawnPoint.y = 0.75f;
             spawnPoint.x = Random.Range(spawnPoint.x - gameObject.transform.localScale.x / 2 * 0.9f, spawnPoint.x + gameObject.transform.localScale.x / 2 * 0.9f);
             spawnPoint.z = Random.Range(spawnPoint.z - gameObject.transform.localScale.z / 2 * 0.9f, spawnPoint.z + gameObject.transform.localScale.z / 2 * 0.9f);
-            Instantiate(myMoney, spawnPoint, gameObject.transform.rotation);
+            GameObject money =  Instantiate(myMoney, spawnPoint, gameObject.transform.rotation)as GameObject;
+            money.transform.parent = GameObject.Find("myMoneyManager").transform;
         }
     }
 }

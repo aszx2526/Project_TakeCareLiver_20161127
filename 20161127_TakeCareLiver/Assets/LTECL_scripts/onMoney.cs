@@ -3,12 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class onMoney : MonoBehaviour {
-    [Header("金錢看板(生)")]
-    public GameObject myTicket_boart;
-    [Header("金錢看板(存)")]
-    public GameObject myTicket_boart_save;
-    [Header("多少錢")]
-    public int myMoneyValue;
     
     // Use this for initialization
     void Start()

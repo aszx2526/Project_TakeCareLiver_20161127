@@ -19,44 +19,53 @@ public class onPlayerTrigger : MonoBehaviour {
         switch (other.tag)
         {
             case "unemployment":
-                if (other.GetComponent<onEmployee>().myMod == 0)
+                if (myFather.GetComponent<onMyController>().myCompany.GetComponent<onMyCompany>().myKCounter >= other.GetComponent<onEmployee>().myK)
                 {
-                    myFather.GetComponent<onMyController>().myEmployeeCounter++;
-                    myFather.GetComponent<onMyController>().mySocial.GetComponent<onSocialForCreatEmployee>().SendMessage("myNoJobManCreaterFN");
-                    other.GetComponent<onEmployee>().myID = myFather.GetComponent<onMyController>().myEmployeeCounter;
-                    other.GetComponent<onEmployee>().myMod_PeopleOrAnimal[0].SetActive(false);
-                    other.GetComponent<onEmployee>().myMod_PeopleOrAnimal[1].SetActive(true);
-                    other.name = "Employee_" + other.GetComponent<onEmployee>().myID.ToString();
-                    other.GetComponent<BoxCollider>().enabled = false;
-
-                    if (other.GetComponent<onEmployee>().myID == 1)
+                    myFather.GetComponent<onMyController>().myCompany.GetComponent<onMyCompany>().myKCounter -= other.GetComponent<onEmployee>().myK;
+                    if (other.GetComponent<onEmployee>().myMod == 0)
                     {
-                        other.tag = "employee";
-                        other.GetComponent<onEmployee>().myTarget = myFather.GetComponent<onMyController>().myEmployeeFollowPoint;
-                        other.GetComponent<onEmployee>().myMod = 1;
-                        other.GetComponent<onEmployee>().myFollowSpeed = Random.Range(7.0f, 10.0f);
-                        other.GetComponent<onEmployee>().myBoss = myFather;
-                        other.GetComponent<onEmployee>().myBoard.GetComponent<Text>().text = "員工" + other.GetComponent<onEmployee>().myID.ToString();
-                        other.gameObject.transform.parent = myFather.GetComponent<onMyController>().myCompany.transform;
-                        myFather.GetComponent<onMyController>().dis_short_employee = 999;
-                        myFather.GetComponent<onMyController>().myTarget = null;
-                        myFather.GetComponent<onMyController>().SendMessage("myFindEmployeeFN");
-                        myFather.GetComponent<onMyController>().myCompany.GetComponent<onMyCompany>().myProjectDevelopEFF += other.GetComponent<onEmployee>().myProduction;
-                    }
-                    else {
-                        other.tag = "employee";
-                        other.GetComponent<onEmployee>().myTarget = GameObject.Find("Employee_" + (other.GetComponent<onEmployee>().myID - 1).ToString()).GetComponent<onEmployee>().myNextFollowPoint;
-                        other.GetComponent<onEmployee>().myMod = 1;
-                        other.GetComponent<onEmployee>().myFollowSpeed = Random.Range(7.0f, 10.0f);
-                        other.GetComponent<onEmployee>().myBoss = myFather;
-                        other.GetComponent<onEmployee>().myBoard.GetComponent<Text>().text = "員工" + other.GetComponent<onEmployee>().myID.ToString();
-                        other.gameObject.transform.parent = myFather.GetComponent<onMyController>().myCompany.transform;
-                        myFather.GetComponent<onMyController>().dis_short_employee = 999;
-                        myFather.GetComponent<onMyController>().myTarget = null;
-                        myFather.GetComponent<onMyController>().SendMessage("myFindEmployeeFN");
-                        myFather.GetComponent<onMyController>().myCompany.GetComponent<onMyCompany>().myProjectDevelopEFF += other.GetComponent<onEmployee>().myProduction;
+                        myFather.GetComponent<onMyController>().myEmployeeCounter++;
+                        myFather.GetComponent<onMyController>().mySocial.GetComponent<onSocialForCreatEmployee>().SendMessage("myNoJobManCreaterFN");
+                        other.GetComponent<onEmployee>().myID = myFather.GetComponent<onMyController>().myEmployeeCounter;
+                        other.GetComponent<onEmployee>().myMod_PeopleOrAnimal[0].SetActive(false);
+                        other.GetComponent<onEmployee>().myMod_PeopleOrAnimal[1].SetActive(true);
+                        other.name = "Employee_" + other.GetComponent<onEmployee>().myID.ToString();
+                        other.GetComponent<BoxCollider>().enabled = false;
+
+                        if (other.GetComponent<onEmployee>().myID == 1)
+                        {
+                            other.tag = "employee";
+                            other.GetComponent<onEmployee>().myTarget = myFather.GetComponent<onMyController>().myEmployeeFollowPoint;
+                            other.GetComponent<onEmployee>().myMod = 1;
+                            other.GetComponent<onEmployee>().myFollowSpeed = Random.Range(7.0f, 10.0f);
+                            other.GetComponent<onEmployee>().myBoss = myFather;
+                            other.GetComponent<onEmployee>().myBoard_Liver.GetComponent<onLiverBoard>().myMessage_text.text = "員工" + other.GetComponent<onEmployee>().myID.ToString();
+                            other.gameObject.transform.parent = myFather.GetComponent<onMyController>().myCompany.transform;
+                            myFather.GetComponent<onMyController>().dis_short_employee = 999;
+                            myFather.GetComponent<onMyController>().myTarget = null;
+                            myFather.GetComponent<onMyController>().SendMessage("myFindEmployeeFN");
+                            myFather.GetComponent<onMyController>().myCompany.GetComponent<onMyCompany>().myProjectDevelopEFF += other.GetComponent<onEmployee>().myProduction;
+                        }
+                        else {
+                            other.tag = "employee";
+                            other.GetComponent<onEmployee>().myTarget = GameObject.Find("Employee_" + (other.GetComponent<onEmployee>().myID - 1).ToString()).GetComponent<onEmployee>().myNextFollowPoint;
+                            other.GetComponent<onEmployee>().myMod = 1;
+                            other.GetComponent<onEmployee>().myFollowSpeed = Random.Range(7.0f, 10.0f);
+                            other.GetComponent<onEmployee>().myBoss = myFather;
+                            other.GetComponent<onEmployee>().myBoard_Liver.GetComponent<onLiverBoard>().myMessage_text.text = "員工" + other.GetComponent<onEmployee>().myID.ToString();
+                            other.gameObject.transform.parent = myFather.GetComponent<onMyController>().myCompany.transform;
+                            myFather.GetComponent<onMyController>().dis_short_employee = 999;
+                            myFather.GetComponent<onMyController>().myTarget = null;
+                            myFather.GetComponent<onMyController>().SendMessage("myFindEmployeeFN");
+                            myFather.GetComponent<onMyController>().myCompany.GetComponent<onMyCompany>().myProjectDevelopEFF += other.GetComponent<onEmployee>().myProduction;
+                        }
                     }
                 }
+                else {
+                    other.GetComponent<onEmployee>().isNeedToSaySomething = true;
+                    other.GetComponent<onEmployee>().myBoard_Liver.GetComponent<onLiverBoard>().myMessage_text.text = "臭廢物！" +"\n"+"連"+ other.GetComponent<onEmployee>().myK.ToString()+"K都付不起";
+                }
+              
                 break;
             case "qkobject":
                 if (myFather.GetComponent<onMyController>().isQKTime == false)
@@ -86,8 +95,10 @@ public class onPlayerTrigger : MonoBehaviour {
                 break;
             case "money":
                 //myMoneyCounterFN
-                GameObject.Find("myobjectCreater").GetComponent<onSocialForCreatEmployee>().SendMessage("myMoneyCounterFN");
-                myFather.GetComponent<onMyController>().myCompany.GetComponent<onMyCompany>().myCompanyMoney += other.GetComponent<onMoney>().myMoneyValue;
+                //GameObject.Find("myobjectCreater").GetComponent<onSocialForCreatEmployee>().SendMessage("myMoneyCounterFN");
+                //myFather.GetComponent<onMyController>().myCompany.GetComponent<onMyCompany>().myCompanyMoney += other.GetComponent<onMoney>().myMoneyValue;
+                GameObject.Find("myobjectCreater").GetComponent<onSocialForCreatEmployee>().myMoneyCounter--;
+                myFather.GetComponent<onMyController>().myCompany.GetComponent<onMyCompany>().myKCounter++;
                 Destroy(other.gameObject);
                 break;
             default:

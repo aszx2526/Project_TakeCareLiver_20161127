@@ -3141,6 +3141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myBoss: {fileID: 0}
   myID: 0
+  myK: 0
   myTarget: {fileID: 0}
   myFollowSpeed: 0
   myMod: 0
@@ -3154,12 +3155,18 @@ MonoBehaviour:
   myNameBoard: {fileID: 1497366997655566, guid: 5d4147b6861bfa048b1f157797b3b02e,
     type: 2}
   myBoard: {fileID: 0}
+  isNeedToSaySomething: 0
+  mySaySomethingTimer: 0
+  mySaySomethingTime: 0
+  myTalkRandom: 0
+  myTalkRandomTimer: 0
+  myTalkRandomTime: 0
   myLiverBoard: {fileID: 1169717540980716, guid: 16f3a929a4401e4418a86e81b5ab0a5b,
     type: 2}
   myBoard_Liver: {fileID: 0}
   myLiverPanel: 0
   myHealthyIndex: 0
-  myProduction: 0.001
+  myProduction: 0.01
   myUpgradeTimesCounter: 0
   myChangeTime: 0
   myChangeTimer: 0

@@ -18,6 +18,10 @@ public class onMyCompany : MonoBehaviour {
     public float myProjectDevelopEFF;
     [Header("專案研發效率條")]
     public Image myProjectDevelopEFF_image;
+    [Header("公司K數")]
+    public int myKCounter;
+    [Header("公司K數_text")]
+    public Text myK_text;
     // Use this for initialization
     void Start () { 
 		
@@ -27,6 +31,7 @@ public class onMyCompany : MonoBehaviour {
 	void Update () {
         //計算研發進度
         myProjectTitle_text.text = "Project" + myProjectID.ToString()+"_研發進度";
+        myK_text.text = "：" + myKCounter.ToString() + "K";
         if (myProjectDevelopEFF_image.fillAmount == 1){
             //賺錢囉！
             myCompanyMoney += 20;

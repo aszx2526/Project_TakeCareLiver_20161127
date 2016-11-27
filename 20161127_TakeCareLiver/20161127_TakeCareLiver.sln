@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20161127_TakeCareLiver.CSharp.Plugins", "20161127_TakeCareLiver.CSharp.Plugins.csproj", "{33DF946A-B1E7-C29B-A6A7-DE7F9CBFD523}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20161127_TakeCareLiver.CSharp", "20161127_TakeCareLiver.CSharp.csproj", "{A30DD5DD-44BD-5099-7288-DAD9484BEB95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20161127_TakeCareLiver.CSharp.Editor", "20161127_TakeCareLiver.CSharp.Editor.csproj", "{5731BDE9-02E6-E6FC-7B4D-4ADF775423BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33DF946A-B1E7-C29B-A6A7-DE7F9CBFD523}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33DF946A-B1E7-C29B-A6A7-DE7F9CBFD523}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33DF946A-B1E7-C29B-A6A7-DE7F9CBFD523}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33DF946A-B1E7-C29B-A6A7-DE7F9CBFD523}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A30DD5DD-44BD-5099-7288-DAD9484BEB95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A30DD5DD-44BD-5099-7288-DAD9484BEB95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A30DD5DD-44BD-5099-7288-DAD9484BEB95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A30DD5DD-44BD-5099-7288-DAD9484BEB95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5731BDE9-02E6-E6FC-7B4D-4ADF775423BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5731BDE9-02E6-E6FC-7B4D-4ADF775423BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5731BDE9-02E6-E6FC-7B4D-4ADF775423BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5731BDE9-02E6-E6FC-7B4D-4ADF775423BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class onLiverBoard : MonoBehaviour {
     public GameObject target;
     public Text ShowNameText;
+    public Text myMessage_text;
     public Vector3 Offset;
     [Header("我的肝")]
     public Image myLiver_Red_image;

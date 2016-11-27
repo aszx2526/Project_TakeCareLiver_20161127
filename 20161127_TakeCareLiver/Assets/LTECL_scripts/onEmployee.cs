@@ -8,6 +8,8 @@ public class onEmployee : MonoBehaviour {
     public GameObject myBoss;
     [Header("我的員工編號")]
     public int myID;
+    [Header("我值多少K")]
+    public int myK;
     [Header("我的跟隨目標")]
     public GameObject myTarget;
     [Header("我的跟隨速度")]
@@ -28,6 +30,14 @@ public class onEmployee : MonoBehaviour {
     public GameObject myNameBoard;
     [Header("狀態看板_")]
     public GameObject myBoard;
+    [Header("是否說些什麼")]
+    public bool isNeedToSaySomething;
+    public float mySaySomethingTimer;
+    public float mySaySomethingTime;
+    public int myTalkRandom;
+    public float myTalkRandomTimer;
+    public float myTalkRandomTime;
+
     [Header("肝指數看板(生)")]
     public GameObject myLiverBoard;
     [Header("肝指數看板_")]
@@ -47,6 +57,9 @@ public class onEmployee : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        myK = 22;
+        mySaySomethingTime = 5;
+        myTalkRandomTime = 8;
         myChangeTime = 0.1f;
         myHealthyIndex = Random.Range(0.0f, 1.5f);
         //myNextFollowPoint = transform.GetChild(0).gameObject;
@@ -61,13 +74,14 @@ public class onEmployee : MonoBehaviour {
         myBoard.transform.parent = GameObject.Find("Canvas").GetComponent<onCanvas>().myEmployeeBoardManager.transform;
         myBoard.GetComponent<onNameBoard>().target = this.gameObject;
         myBoard.GetComponent<onNameBoard>().Offset.y = 40;
-        myBoard.GetComponent<Text>().text = "人才22K";
+        myBoard.GetComponent<Text>().text = "";
 
         myBoard_Liver = Instantiate(myLiverBoard) as GameObject;
         myBoard_Liver.transform.parent = GameObject.Find("Canvas").GetComponent<onCanvas>().myEmployeeBoardManager.transform;
         myBoard_Liver.GetComponent<onLiverBoard>().target = this.gameObject;
         myBoard_Liver.GetComponent<onLiverBoard>().Offset.y = 20;
         myBoard_Liver.GetComponent<onLiverBoard>().myLiver_Black_image.fillAmount = 1 - (myLiverPanel / 100);
+        myBoard_Liver.GetComponent<onLiverBoard>().myMessage_text.text = "人才" + myK.ToString() + "K";
         //myBoard_Liver.GetComponent<Text>().text = "肝指數："+myLiverPanel.ToString();
 
 
@@ -75,7 +89,40 @@ public class onEmployee : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (myTarget) {
+        if (isNeedToSaySomething) {
+            if (mySaySomethingTimer > mySaySomethingTime) {
+                mySaySomethingTimer = 0;
+                isNeedToSaySomething = false;
+            }
+            else {
+                mySaySomethingTimer += Time.deltaTime;
+            }
+        }
+        else {
+            if (myTarget) {
+                myBoard_Liver.GetComponent<onLiverBoard>().myMessage_text.text = "員工" + myID.ToString();// + "K";
+            }
+            else {
+                myBoard_Liver.GetComponent<onLiverBoard>().myMessage_text.text = "人才"+myK.ToString()+"K";
+            }
+            
+        }
+
+        myModControllFN();
+        //if (isNeedToFollow && Input.anyKey)
+        if (myTalkRandomTimer > myTalkRandomTime)
+        {
+            myTalkRandomTimer = 0;
+            myTalkRandom = Random.Range(0, 101);
+        }
+        else {
+            myTalkRandomTimer += Time.deltaTime;
+        }
+        myTalkRandomFN();
+    }
+    public void myModControllFN() {
+        if (myTarget)
+        {
             switch (myMod)
             {
                 case 0:
@@ -85,14 +132,12 @@ public class onEmployee : MonoBehaviour {
                     {
                         if (myTarget.GetComponent<onEmployeeNextfollowPoint>().myFather.GetComponent<onMyController>().isQKTime)
                         {
-                            if (myChangeTimer > myChangeTime) {
+                            if (myChangeTimer > myChangeTime)
+                            {
                                 myMod = 3;
                                 myChangeTimer = 0;
                             }
-                            else
-                            {
-                                myChangeTimer += Time.deltaTime;
-                            }
+                            else{myChangeTimer += Time.deltaTime;}
                         }
                     }
                     else if (myTarget.GetComponent<onEmployeeNextfollowPoint>().myFathermod == 2)
@@ -128,7 +173,8 @@ public class onEmployee : MonoBehaviour {
                 case 3:
                     myLiverPanel += Time.deltaTime * myHealthyIndex * 10;
                     myBoard_Liver.GetComponent<onLiverBoard>().myLiver_Black_image.fillAmount = 1 - (myLiverPanel / 100);
-                    if (myTarget.GetComponent<onEmployeeNextfollowPoint>().myFather.name == "IamBossVer2") {
+                    if (myTarget.GetComponent<onEmployeeNextfollowPoint>().myFather.name == "IamBossVer2")
+                    {
                         if (myTarget.GetComponent<onEmployeeNextfollowPoint>().myFather.GetComponent<onMyController>().isQKTime == false)
                         {
                             if (myChangeTimer > myChangeTime)
@@ -136,10 +182,7 @@ public class onEmployee : MonoBehaviour {
                                 myMod = 1;
                                 myChangeTimer = 0;
                             }
-                            else
-                            {
-                                myChangeTimer += Time.deltaTime;
-                            }
+                            else{myChangeTimer += Time.deltaTime;}
                         }
                     }
                     else if (myTarget.GetComponent<onEmployeeNextfollowPoint>().myFathermod == 2)
@@ -147,7 +190,8 @@ public class onEmployee : MonoBehaviour {
                         //print("mytarget mod = 2");
                         myUpgradeFN();
                     }
-                    else if(myTarget.GetComponent<onEmployeeNextfollowPoint>().myFathermod == 1) {
+                    else if (myTarget.GetComponent<onEmployeeNextfollowPoint>().myFathermod == 1)
+                    {
                         if (myChangeTimer > myChangeTime)
                         {
                             myMod = 1;
@@ -166,9 +210,7 @@ public class onEmployee : MonoBehaviour {
                     break;
             }
         }
-        //if (isNeedToFollow && Input.anyKey)
-      
-	}
+    }
     public void myEmployeeMoveFN() {
         if (Vector3.Distance(transform.position, myTarget.transform.position) > 0.2)
         {
@@ -183,24 +225,16 @@ public class onEmployee : MonoBehaviour {
     }
     public void LiverPanelCheckFN() {
         myBoard.GetComponent<Text>().text = "";
-        myBoard_Liver.GetComponent<Text>().text = "";
+        //myBoard_Liver.GetComponent<Text>().text = "";
         if (myLiverPanel < 10) {
             myMod = 2;
             myMod_PeopleOrAnimal[1].SetActive(false);
             myMod_PeopleOrAnimal[2].SetActive(true);
             myLiverUpdaetFN();
         }
-        else if (myLiverPanel < 30)
-        {
-            myLiverUpdaetFN();
-        }
-        else if (myLiverPanel < 50)
-        {
-            myLiverUpdaetFN();
-        }
-        else {
-            myLiverUpdaetFN();
-        }
+        else if (myLiverPanel < 30){myLiverUpdaetFN();}
+        else if (myLiverPanel < 50){myLiverUpdaetFN();}
+        else {myLiverUpdaetFN();}
     }
     public void myLiverUpdaetFN() {
         //myBoard_Liver.GetComponent<onLiverBoard>().myLiver_Color.r = myLiverPanel / 100;
@@ -219,5 +253,16 @@ public class onEmployee : MonoBehaviour {
             myTarget = GameObject.Find("Employee_" + (myID - myUpgradeTimesCounter).ToString()).GetComponent<onEmployee>().myNextFollowPoint;
         }
         
+    }
+    public void myTalkRandomFN() {
+        if (myTalkRandom > 50) {
+            isNeedToSaySomething = true;
+            if (myTarget) {
+                myBoard_Liver.GetComponent<onLiverBoard>().myMessage_text.text = "豪想放假QAQ";
+            }
+            else {
+                myBoard_Liver.GetComponent<onLiverBoard>().myMessage_text.text = "工作真難找...";
+            }
+        }
     }
 }
