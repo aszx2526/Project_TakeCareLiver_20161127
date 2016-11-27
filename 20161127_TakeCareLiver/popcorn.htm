@@ -1,0 +1,514 @@
+<html><head><title>popcorn-engine logfile</title>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<style>body
+{
+	padding-top: 44px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	background: #bbbbbb;
+	margin: 0px;
+	color: #000000;
+	font-family: Consolas, Courier;
+	font-size: 10pt;
+}
+.header2
+{
+	font-size: 72px;
+	left: 5px;
+	color: #8a98b0;
+	position: absolute;
+	top: -22px
+}
+.header
+{
+	left: 0px;
+	overflow: hidden;
+	width: 100%;
+	color: #ffffff;
+	font-family: Verdana, Arial;
+	position: absolute;
+	top: 0px;
+	height: 44px;
+	background-color: #7b8aa6
+}
+.pagetitle
+{
+	font-size: 22px;
+	z-index: 100;
+	left: 5px;
+	color: #ffffff;
+	position: absolute;
+	top: 14px;
+}
+.copyright
+{
+	font-size: 10px;
+	z-index: 60;
+	left: -8px;
+	width: 100%;
+	color: #acb6c8;
+	position: absolute;
+	top: 1px;
+	text-align: right;
+	text-decoration: none;
+}
+.build
+{
+	font-size: 12px;
+	color: #eeeeee;
+	text-decoration: none;
+}
+a.header1:link
+{
+	font-size: 30px;
+	z-index: 50;
+	left: -8px;
+	width: 100%;
+	color: #a0acc0;
+	position: absolute;
+	top: 6px;
+	text-align: right;
+	text-decoration: none;
+}
+a.header1:visited
+{
+	font-size: 30px;
+	z-index: 50;
+	left: -8px;
+	width: 100%;
+	color: #a0acc0;
+	position: absolute;
+	top: 6px;
+	text-align: right;
+	text-decoration: none;
+}
+a.header1:hover
+{
+	font-size: 30px;
+	z-index: 50;
+	left: -8px;
+	width: 100%;
+	color: #acb6c8;
+	position: absolute;
+	top: 6px;
+	text-align: right;
+	text-decoration: none;
+}
+.log_caller { color: #666666; }
+.dll { color: #800070; }
+.M   { color: #000000; background-color: #DDDDDD; white-space: pre; }
+.W   { color: #000000; background-color: #FFAA33; white-space: pre; }
+.E   { color: #FFFFFF; background-color: #DD1100; white-space: pre; }
+.EC  { color: #FFFFFF; background-color: #DD0000; white-space: pre; }
+.EI  { color: #FFFFFF; background-color: #EE0000; white-space: pre; }
+.EF  { color: #FFFFFF; background-color: #FF0000; white-space: pre; }
+</style>
+</head>
+<body>
+<div class=header id=header>
+	<a class=header1 id=header1 href="http://www.popcornfx.com/">www.popcornfx.com</a>
+	<div class=copyright id=copyright>Copyright (c) Persistant Studios 2010-2016</div>
+	<div class=header2 id=header2>PopcornFX</div>
+	<div class=pagetitle id=pagetitle>PopcornFX logfile. <font class=build>build 1.10.6.31633, Wed Oct 5 13:15:54 2016 +0200</font></i></div>
+</div><div class=M><center>... STARTUP ...</center></div>
+<div class=M>[BOOT]> License keycode: "UnityStore-{1CA33DEFAC98E811}"</div>
+<div class=M>[BOOT]> Popcorn runtime build config: .... RELEASE</div>
+<div class=M>[BOOT]> Has debug asserts: .................... NO</div>
+<div class=M>[BOOT]> Has release asserts: ................. YES</div>
+<div class=M>[BOOT]> Has anonymous asserts: ................ NO</div>
+<div class=M>[BOOT]> Has containers monitoring: ............ NO</div>
+<div class=M>[BOOT]> Has iterators debug checks: ........... NO</div>
+<div class=M>[BOOT]> Mem debug level: ....................... 0</div>
+<div class=M>[BOOT]> Has default mem allocators: .......... YES</div>
+<div class=M>[BOOT]> |</div>
+<div class=M>[BOOT]> | ... BOOTING HH_KERNEL ...</div>
+<div class=M>[BOOT]> [KR_CALLSTACK             ]:Startup       506 usec         0 bytes      0 KbTotal</div>
+<div class=M>[BOOT]> [KR_PERFMONITOR           ]:Startup         5 usec       134 bytes      1 KbTotal</div>
+<div class=M>[BOOT]> [KR_MEM                   ]:Startup         0 usec        99 bytes      1 KbTotal</div>
+<div class=M>[BOOT]> [KR_CONTAINERS            ]:Startup         4 usec         0 bytes      1 KbTotal</div>
+<div class=M>[BOOT]> [KR_ASSERT                ]:Startup         0 usec         0 bytes      1 KbTotal</div>
+<div class=M>[BOOT]> [KR_BUFFER                ]:Startup         9 usec      8219 bytes      9 KbTotal</div>
+<div class=M>[BOOT]> [KR_STRING                ]:Startup         5 usec      2102 bytes     11 KbTotal</div>
+<div class=M>[BOOT]> [KR_RTTI                  ]:Startup         0 usec         0 bytes     11 KbTotal</div>
+<div class=M>[BOOT]> [KR_THREADS               ]:Startup        19 usec         0 bytes     11 KbTotal</div>
+<div class=M>[BOOT]> [KR_THREAD_POOL           ]:Startup         0 usec         0 bytes     12 KbTotal</div>
+<div class=M>[KR_CAPS_CPU]> Multi-Core system, Multi-threaded cores</div>
+<div class=M>[KR_CAPS_CPU]>      Logical processors reported by OS : 4</div>
+<div class=M>[KR_CAPS_CPU]>      Visible logical processors        : 4</div>
+<div class=M>[KR_CAPS_CPU]>      Cores                             : 2</div>
+<div class=M>[KR_CAPS_CPU]>      Physical packages                 : 1</div>
+<div class=M>[KR_CAPS_CPU]> ---- Package 0 -------------------------</div>
+<div class=M>[KR_CAPS_CPU]>      Vendor                            : GenuineIntel</div>
+<div class=M>[KR_CAPS_CPU]>      CPU Name                          : "Intel(R) Core(TM) i5-5300U CPU @ 2.30GHz"</div>
+<div class=M>[KR_CAPS_CPU]>      Frequency                         : 2290.0 MHz (2294.110 measured)</div>
+<div class=M>[KR_CAPS_CPU]>      Microarchitecture                 : Broadwell, 64-bits</div>
+<div class=M>[KR_CAPS_CPU]>      Extensions                        : VirMode DBG     PageSz4 RDTSC   MSR     PAE     MCE     CXCHG8  APIC    SEP     MTRR    PGE     </div>
+<div class=M>[KR_CAPS_CPU]>                                          MCA     CMOV    PAT     PSE36   CLFlush DebugSt ACPI    FXSR    SSnoop  HThread ThMon   ThMon2  </div>
+<div class=M>[KR_CAPS_CPU]>                                          IA64Ext PBE     ExecDis DTES64  MONITOR DS_CPL  VMEXT   SMEXT   ESpdStp CXCHG16 XTPR    PDCM    </div>
+<div class=M>[KR_CAPS_CPU]>                                          x2APIC  XSave   OsXSave TSCInv  MOVBE   POPCNT  CLMUL   BMI1    BMI2    F16C    AES     FMA3    </div>
+<div class=M>[KR_CAPS_CPU]>                                          RDRAND  MMX     SSE     SSE2    SSE3    SSSE3   SSE4_1  SSE4_2  AVX     AVX2    </div>
+<div class=M>[KR_CAPS_CPU]>      CPUID Leaves                      : 00000014-00000008</div>
+<div class=M>[KR_CAPS_CPU]>      CACHE TYPE                  SIZE         ASSOCIATIVITY  LINE-SIZE</div>
+<div class=M>[KR_CAPS_CPU]>         L1 Data cache              32 KB             8 ways   64-bytes</div>
+<div class=M>[KR_CAPS_CPU]>         L1 Instruction cache       32 KB             8 ways   64-bytes</div>
+<div class=M>[KR_CAPS_CPU]>         L2 Unified cache          256 KB             8 ways   64-bytes</div>
+<div class=M>[KR_CAPS_CPU]>         L3 Unified cache         3072 KB            12 ways   64-bytes</div>
+<div class=M>[KR_CAPS_CPU]>      PROCESSOR  APIC_ID  PACKAGE     CORE   THREAD    CACHES</div>
+<div class=M>[KR_CAPS_CPU]>              0     0000        0        0        0    L1D[0] L1I[0] L2[0] L3[0]</div>
+<div class=M>[KR_CAPS_CPU]>              1     0001        0        0        1    L1D[0] L1I[0] L2[0] L3[0]</div>
+<div class=M>[KR_CAPS_CPU]>              2     0002        0        1        0    L1D[1] L1I[1] L2[1] L3[0]</div>
+<div class=M>[KR_CAPS_CPU]>              3     0003        0        1        1    L1D[1] L1I[1] L2[1] L3[0]</div>
+<div class=M>[BOOT]> [KR_CAPS_CPU              ]:Startup      3459 usec      1006 bytes     13 KbTotal</div>
+<div class=M>[KR_CAPS_MEM]> Detecting memory:</div>
+<div class=M>[KR_CAPS_MEM]>      MEMORY        :          USED     AVAILABLE         TOTAL</div>
+<div class=M>[KR_CAPS_MEM]>      physical      :     5046.0 Mb     3040.0 Mb     8087.0 Mb</div>
+<div class=M>[KR_CAPS_MEM]>      page file     :     6734.0 Mb     9544.0 Mb    16279.0 Mb</div>
+<div class=M>[KR_CAPS_MEM]>      virtual       :     2024.0 Mb 134215704.0 Mb 134217728.0 Mb</div>
+<div class=M>[KR_CAPS_MEM]>      Address range : 00007FFFFFFEFFFF - 0000000000010000</div>
+<div class=M>[BOOT]> [KR_CAPS_MEM              ]:Startup       318 usec        99 bytes     13 KbTotal</div>
+<div class=M>[BOOT]> [KR_PROFILER              ]:Startup        22 usec      2629 bytes     15 KbTotal</div>
+<div class=M>[BOOT]> [KR_CHECKSUM              ]:Startup         0 usec         0 bytes     16 KbTotal</div>
+<div class=M>[BOOT]> [KR_COMPRESSION           ]:Startup         0 usec         0 bytes     16 KbTotal</div>
+<div class=M>[BOOT]> [KR_FILE                  ]:Startup        12 usec        35 bytes     16 KbTotal</div>
+<div class=M>[BOOT]> [KR_PLUGINS               ]:Startup         0 usec        83 bytes     16 KbTotal</div>
+<div class=M>[BOOT]> [KR_SCHEDULER             ]:Startup       220 usec     16766 bytes     32 KbTotal</div>
+<div class=M>[BOOT]> [KR_RESOURCES             ]:Startup         0 usec       107 bytes     33 KbTotal</div>
+<div class=M>[BOOT]> |</div>
+<div class=M>[BOOT]> | ... BOOTING KR_BASE_OBJECT ...</div>
+<div class=M>[BOOT]> [KR_BASE_OBJECT           ]:Startup        34 usec     17863 bytes     50 KbTotal</div>
+<div class=M>[BOOT]> [BASE_OBJECT_HBO_SCOPE    ]:Startup        53 usec     99827 bytes    148 KbTotal</div>
+<div class=M>[BOOT]> |</div>
+<div class=M>[BOOT]> | ... BOOTING HH-EngineUtils ...</div>
+<div class=M>[BOOT]> [KR_RANDOM                ]:Startup         7 usec      5137 bytes    153 KbTotal</div>
+<div class=M>[BOOT]> [KR_TIMELINE              ]:Startup         6 usec         0 bytes    153 KbTotal</div>
+<div class=M>[BOOT]> [KR_ACTIONS               ]:Startup       146 usec     21236 bytes    174 KbTotal</div>
+<div class=M>[BOOT]> [KR_CORE                  ]:Startup       112 usec     13370 bytes    187 KbTotal</div>
+<div class=M>[BOOT]> [KR_SAMPLERS              ]:Startup        35 usec      7250 bytes    194 KbTotal</div>
+<div class=M>[BOOT]> [EU_SKELETON              ]:Startup         9 usec      3455 bytes    198 KbTotal</div>
+<div class=M>[BOOT]> |</div>
+<div class=M>[BOOT]> | ... BOOTING HH_COMPILER ...</div>
+<div class=M>[BOOT]> [HH_COMPILER              ]:Startup       193 usec     18379 bytes    216 KbTotal</div>
+<div class=M>[BOOT]> |</div>
+<div class=M>[BOOT]> | ... BOOTING HH_GEOMETRICS ...</div>
+<div class=M>[BOOT]> [GE_SKELETON              ]:Startup         0 usec         0 bytes    216 KbTotal</div>
+<div class=M>[BOOT]> [GE_MESH                  ]:Startup        94 usec      8132 bytes    224 KbTotal</div>
+<div class=M>[GF_MESH_DEFORMERS]> CPU Dispatch mapped implementation of Skeletal Skinner to 'SIMD'</div>
+<div class=M>[BOOT]> [GF_MESH_DEFORMERS        ]:Startup        60 usec     44201 bytes    267 KbTotal</div>
+<div class=M>[BOOT]> [GE_MESH_RESOURCE         ]:Startup        15 usec      4686 bytes    272 KbTotal</div>
+<div class=M>[BOOT]> [GE_MESH_KDTREE           ]:Startup         0 usec         0 bytes    272 KbTotal</div>
+<div class=M>[BOOT]> [GE_SHAPES                ]:Startup       122 usec     10960 bytes    283 KbTotal</div>
+<div class=M>[BOOT]> [GE_COLLIDERS             ]:Startup         0 usec         0 bytes    283 KbTotal</div>
+<div class=M>[BOOT]> [GE_BILLBOARDS            ]:Startup         0 usec         0 bytes    283 KbTotal</div>
+<div class=M>[BOOT]> [GE_RECTANGLE_LIST        ]:Startup         5 usec      4329 bytes    287 KbTotal</div>
+<div class=M>[BOOT]> |</div>
+<div class=M>[BOOT]> | ... BOOTING HH_IMAGING ...</div>
+<div class=M>[IM_IMAGES]> CPU Dispatch mapped implementation of ETC1 decompressor to 'SSE4.1'</div>
+<div class=M>[BOOT]> [IM_IMAGES                ]:Startup       386 usec      4491 bytes    292 KbTotal</div>
+<div class=M>[BOOT]> |</div>
+<div class=M>[BOOT]> | ... BOOTING HH_PARTICLES ...</div>
+<div class=M>[BOOT]> [HH_PARTICLES             ]:Startup      2888 usec    889721 bytes   1160 KbTotal</div>
+<div class=M>[BOOT]> [HH-CompilerBackend_CPU_Emulation]:Startup         8 usec     10327 bytes   1167 KbTotal</div>
+<div class=M>[KR_PLUGINS]> Registering module "CompilerBackend_CPU_Emulation" to handler "hh_compiler".</div>
+<div class=M>[KR_PLUGINS]> Registering module "PopcornFX-Image codec dds" to handler "im_codec".</div>
+<div class=M>[KR_PLUGINS]> Registering module "PopcornFX-Image codec png" to handler "im_codec".</div>
+<div class=M>[KR_PLUGINS]> Registering module "PopcornFX-Image codec targa" to handler "im_codec".</div>
+<div class=M>[KR_PLUGINS]> Registering module "PopcornFX-Image codec jpeg" to handler "im_codec".</div>
+<div class=M>[BOOT]> [PK_UNITY_PLUGIN          ]:Startup         0 usec         0 bytes   1168 KbTotal</div>
+<div class=M>[PK_UNITY_PLUGIN]> Startup PKFX</div>
+<div class=M>[PK_UNITY_PLUGIN]> Added Assets/StreamingAssets/PackFx for watching.</div>
+<div class=M>[PK_UNITY_PLUGIN]> Exploring pack Assets/StreamingAssets/PackFx...</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/AnimBlend_CS_FX.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/AttribSamplerShape.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/Basic_CS_FX.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/Blast.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/BurnHit.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/ElectricOrb.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/Fire_CS_FX.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/FlameThrower.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/JukeBall.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/Lightning_SceneProbes.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/NormalMap_CS_FX.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/PopcornLogo.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/Teleporter.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/testSampleSpectrum.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/testSampleWaveform.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/Thruster.pkfx</div>
+<div class=M>[PK_UNITY_PLUGIN]>   -> Particles/TorchFire.pkfx</div>
+<div class=M>[GE_MESH_RESOURCE]> Loading Mesh "Assets/StreamingAssets/PackFx/Meshes/VenusHigh.pkmm"</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=118.9 Kb (50.0 %), nodes=38.9 Kb, total=157.8 Kb (expanded=276.6 Kb)</div>
+<div class=E>[KR_BASE_OBJECT]> Error parsing the HBO file : might have been corrupt</div>
+<div class=E>[KR_BASE_OBJECT]> Error parsing the HBO file : might have been corrupt</div>
+<div class=E>[KR_BASE_OBJECT]> Error parsing the HBO file : might have been corrupt</div>
+<div class=E>[KR_BASE_OBJECT]> Error parsing the HBO file : might have been corrupt</div>
+<div class=E>[KR_BASE_OBJECT]> Error parsing the HBO file : might have been corrupt</div>
+<div class=E>[KR_BASE_OBJECT]> Error parsing the HBO file : might have been corrupt</div>
+<div class=E>[KR_BASE_OBJECT]> Error parsing the HBO file : might have been corrupt</div>
+<div class=M>[GE_MESH_RESOURCE]> Loading Mesh "Assets/StreamingAssets/PackFx/Meshes/Telepod.pkmm"</div>
+<div class=W>[GE_MESH_RESOURCE]> Unsupported mesh resource chunk @0 (16 bytes, key = 7)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=23.2 Kb (50.0 %), nodes=48.2 Kb, total=71.5 Kb (expanded=94.7 Kb)</div>
+<div class=M>[GE_MESH_RESOURCE]> read KdTree chunk: leaves=0.4 Kb (25.0 %), nodes=1.3 Kb, total=1.7 Kb (expanded=2.8 Kb)</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/AnimBlend_CS_FX.pkfx"</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\BlastPack_Extended.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/BlastPack_Extended.png) : 23.760 ms</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 0000000026E226D8 buffers from maxverts=0, maxind=0 to maxvert=152, maxind=164 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 0000000026E226D8 buffers from maxverts=0, maxind=0 to maxvert=152, maxind=164 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 0000000026E226D8 buffers from maxverts=0, maxind=0 to maxvert=152, maxind=164 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 0000000026E226D8 buffers from maxverts=0, maxind=0 to maxvert=152, maxind=164 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/Fire_CS_FX.pkfx"</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\BlastPack_Extended_Normal.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/BlastPack_Extended_Normal.png) : 15.240 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\BlastPack_Extended.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/BlastPack_Extended.png) : 23.838 ms</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 00000000267AC1F8 buffers from maxverts=0, maxind=0 to maxvert=146, maxind=155 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 00000000267AC1F8 buffers from maxverts=146, maxind=155 to maxvert=284, maxind=362 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 0000000026E226D8 buffers from maxverts=0, maxind=0 to maxvert=152, maxind=164 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/AttribSamplerShape.pkfx"</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\FX\BB_Glow_043_64.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/FX/BB_Glow_043_64.png) : 1.385 ms</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 000000003E3430C8 buffers from maxverts=0, maxind=0 to maxvert=6134, maxind=9137 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 000000003E3430C8 buffers from maxverts=6134, maxind=9137 to maxvert=11036, maxind=16490 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 000000003E3430C8 buffers from maxverts=11036, maxind=16490 to maxvert=17042, maxind=25499 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=E>[IM_IMAGES]> Conversion from "Invalid" to "BGRA8" not handled natively, cannot convert image.</div>
+<div class=E>[IM_IMAGES]> Conversion from "Invalid" to "BGRA8" not handled natively, cannot convert image.</div>
+<div class=E>[IM_IMAGES]> Conversion from "Invalid" to "BGRA8" not handled natively, cannot convert image.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[HH_PARTICLES]> Unsupported renderer found : "CParticleRenderer_Light" ! INCOMPLETE RENDERER</div>
+<div class=E>[HH_PARTICLES]> Particle Renderer : runtime object creation failed for renderer "Particles/ElectricOrb.pkfx/CParticleRenderer_Light_FC517A71"</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/JukeBall.pkfx"</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/ElectricOrb.pkfx"</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\FX\LightRays_02.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/FX/LightRays_02.png) : 1.402 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\FX\LightningOrb_01.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/FX/LightningOrb_01.png) : 1.176 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\FX\Thunder_01.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/FX/Thunder_01.png) : 3.566 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\FX\dot_NoAlpha.tga)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/FX/dot_NoAlpha.tga) : 0.788 ms</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 000000003E343598 buffers from maxverts=0, maxind=0 to maxvert=152, maxind=164 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 000000003E343A68 buffers from maxverts=0, maxind=0 to maxvert=152, maxind=164 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 000000004C918948 buffers from maxverts=0, maxind=0 to maxvert=182, maxind=209 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 0000000026E226D8 buffers from maxverts=0, maxind=0 to maxvert=152, maxind=164 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 000000003E3430C8 buffers from maxverts=0, maxind=0 to maxvert=6134, maxind=9137 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 000000003E3430C8 buffers from maxverts=6134, maxind=9137 to maxvert=11168, maxind=16688 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 000000003E3430C8 buffers from maxverts=11168, maxind=16688 to maxvert=17228, maxind=25778 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Unsupported attribute sampler : Trub</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Unsupported attribute sampler : Trub</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Unsupported attribute sampler : Trub</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/Thruster.pkfx"</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\BlastPack_Extended.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/BlastPack_Extended.png) : 20.223 ms</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 000000004C917FA8 buffers from maxverts=0, maxind=0 to maxvert=452, maxind=614 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Unsupported attribute sampler : Trub</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Unsupported attribute sampler : Trub</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Unsupported attribute sampler : Trub</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 000000004C917FA8 buffers from maxverts=0, maxind=0 to maxvert=176, maxind=200 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 000000004C917FA8 buffers from maxverts=176, maxind=200 to maxvert=356, maxind=470 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=M>[PK_UNITY_PLUGIN]> Unloading OK "Particles/Thruster.pkfx"</div>
+<div class=W>[PK_UNITY_PLUGIN]> Unsupported attribute sampler : Trub</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Unsupported attribute sampler : Trub</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[HH_PARTICLES]> Unsupported renderer found : "CParticleRenderer_Light" ! INCOMPLETE RENDERER</div>
+<div class=E>[HH_PARTICLES]> Particle Renderer : runtime object creation failed for renderer "Particles/TorchFire.pkfx/CParticleRenderer_Light_9FFE2CE3"</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/TorchFire.pkfx"</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\BlastPack_Extended.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/BlastPack_Extended.png) : 22.530 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\BlastPack_Extended.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/BlastPack_Extended.png) : 19.963 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\FX\ParticleDeformBlur_01.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/FX/ParticleDeformBlur_01.png) : 15.265 ms</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 000000004C91AAF8 buffers from maxverts=0, maxind=0 to maxvert=143, maxind=155 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 000000004C917AD8 buffers from maxverts=0, maxind=0 to maxvert=134, maxind=137 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 000000004C91AAF8 buffers from maxverts=143, maxind=155 to maxvert=263, maxind=362 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 000000004C91AAF8 buffers from maxverts=263, maxind=362 to maxvert=458, maxind=677 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 000000004C9197B8 buffers from maxverts=0, maxind=0 to maxvert=35489, maxind=70850 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 000000004C9197B8 buffers from maxverts=35489, maxind=70850 to maxvert=67259, maxind=134390 (IFORMAT=DXGI_FORMAT_R32_UINT) (COLORS=FLOAT4)</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 000000004C9197B8 buffers from maxverts=67259, maxind=134390 to maxvert=122168, maxind=244208 (IFORMAT=DXGI_FORMAT_R32_UINT) (COLORS=FLOAT4)</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 000000004C9197B8 buffers from maxverts=122168, maxind=244208 to maxvert=188615, maxind=377102 (IFORMAT=DXGI_FORMAT_R32_UINT) (COLORS=FLOAT4)</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 000000004C9197B8 buffers from maxverts=188615, maxind=377102 to maxvert=283808, maxind=567488 (IFORMAT=DXGI_FORMAT_R32_UINT) (COLORS=FLOAT4)</div>
+<div class=M>[HH_PARTICLES]> resizing pages from 1024 to 2048</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[PK_UNITY_PLUGIN]> Unloading OK "Particles/TorchFire.pkfx"</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/AnimBlend_CS_FX.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/AnimBlend_CS_FX.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/AttribSamplerShape.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/AttribSamplerShape.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/Basic_CS_FX.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/Basic_CS_FX.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/Blast.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/Blast.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/BurnHit.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/BurnHit.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/ElectricOrb.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/ElectricOrb.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/Fire_CS_FX.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/Fire_CS_FX.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/FlameThrower.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/FlameThrower.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/JukeBall.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/JukeBall.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/Lightning_SceneProbes.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/Lightning_SceneProbes.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/NormalMap_CS_FX.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/NormalMap_CS_FX.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/PopcornLogo.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/PopcornLogo.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/Teleporter.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/Teleporter.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/testSampleSpectrum.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/testSampleSpectrum.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/testSampleWaveform.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/testSampleWaveform.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/Thruster.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/Thruster.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/TorchFire.pkfx" </div>
+<div class=M>[PK_UNITY_PLUGIN]> FileWatcher: file modified: "Particles/TorchFire.pkfx" </div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/Basic_CS_FX.pkfx"</div>
+<div class=W>[HH_PARTICLES]> Unsupported renderer found : "CParticleRenderer_Light" ! INCOMPLETE RENDERER</div>
+<div class=E>[HH_PARTICLES]> Particle Renderer : runtime object creation failed for renderer "Particles/Blast.pkfx/CParticleRenderer_Light_0DA5A5B5"</div>
+<div class=W>[HH_PARTICLES]> Unsupported renderer found : "CParticleRenderer_Light" ! INCOMPLETE RENDERER</div>
+<div class=E>[HH_PARTICLES]> Particle Renderer : runtime object creation failed for renderer "Particles/Blast.pkfx/CParticleRenderer_Light_C038D21F"</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/Blast.pkfx"</div>
+<div class=W>[HH_PARTICLES]> Unsupported renderer found : "CParticleRenderer_Light" ! INCOMPLETE RENDERER</div>
+<div class=E>[HH_PARTICLES]> Particle Renderer : runtime object creation failed for renderer "Particles/BurnHit.pkfx/CParticleRenderer_Light_7CF1F42E"</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/BurnHit.pkfx"</div>
+<div class=W>[HH_PARTICLES]> Unsupported renderer found : "CParticleRenderer_Light" ! INCOMPLETE RENDERER</div>
+<div class=E>[HH_PARTICLES]> Particle Renderer : runtime object creation failed for renderer "Particles/FlameThrower.pkfx/CParticleRenderer_Light_80861EE6"</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/FlameThrower.pkfx"</div>
+<div class=W>[HH_PARTICLES]> Unsupported renderer found : "CParticleRenderer_Light" ! INCOMPLETE RENDERER</div>
+<div class=E>[HH_PARTICLES]> Particle Renderer : runtime object creation failed for renderer "Particles/Lightning_SceneProbes.pkfx/CParticleRenderer_Light_DCEA9FC3"</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/Lightning_SceneProbes.pkfx"</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/NormalMap_CS_FX.pkfx"</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/PopcornLogo.pkfx"</div>
+<div class=W>[HH_PARTICLES]> Unsupported renderer found : "CParticleRenderer_Light" ! INCOMPLETE RENDERER</div>
+<div class=E>[HH_PARTICLES]> Particle Renderer : runtime object creation failed for renderer "Particles/Teleporter.pkfx/CParticleRenderer_Light_1D81AD38"</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/Teleporter.pkfx"</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/testSampleSpectrum.pkfx"</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/testSampleWaveform.pkfx"</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/Thruster.pkfx"</div>
+<div class=W>[HH_PARTICLES]> Unsupported renderer found : "CParticleRenderer_Light" ! INCOMPLETE RENDERER</div>
+<div class=E>[HH_PARTICLES]> Particle Renderer : runtime object creation failed for renderer "Particles/TorchFire.pkfx/CParticleRenderer_Light_9FFE2CE3"</div>
+<div class=M>[PK_UNITY_PLUGIN]> Preloading OK "Particles/TorchFire.pkfx"</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\BlastPack_Extended.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/BlastPack_Extended.png) : 20.414 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\FX\ParticleDeformBlur_01.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/FX/ParticleDeformBlur_01.png) : 2.640 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\BlastPack.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/BlastPack.png) : 6.890 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\BlastPack_Extended.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/BlastPack_Extended.png) : 20.291 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\FX\Lightning_05.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/FX/Lightning_05.png) : 2.027 ms</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing Ribbons 0000000017D893A8 buffers from maxverts=0, maxind=0 to maxvert=320, maxind=416 (IFORMAT=D3DFMT_INDEX16) (COLORS=FLOAT4)</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\FX\BB_Glow_043_64.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/FX/BB_Glow_043_64.png) : 0.924 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\FX\BB_Glow_02_64.tga)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/FX/BB_Glow_02_64.tga) : 0.560 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\test_nmap_normal.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/test_nmap_normal.png) : 264.779 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\Sprites\empty.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/Sprites/empty.png) : 2.947 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\FX\dot_NoAlpha.tga)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/FX/dot_NoAlpha.tga) : 0.604 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\FX\LightRays_02.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/FX/LightRays_02.png) : 0.833 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\FX\Deform03.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/FX/Deform03.png) : 0.984 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\FX\BB_Glow_043_64.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/FX/BB_Glow_043_64.png) : 0.883 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\BlastPack_Extended.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/BlastPack_Extended.png) : 19.942 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\BlastPack_Extended.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/BlastPack_Extended.png) : 23.178 ms</div>
+<div class=M>[PK_UNITY_PLUGIN]> Reloading OK "Particles/AnimBlend_CS_FX.pkfx"</div>
+<div class=M>[PK_UNITY_PLUGIN]> Reloading OK "Particles/AttribSamplerShape.pkfx"</div>
+<div class=M>[PK_UNITY_PLUGIN]> Reloading OK "Particles/ElectricOrb.pkfx"</div>
+<div class=M>[PK_UNITY_PLUGIN]> Reloading OK "Particles/Fire_CS_FX.pkfx"</div>
+<div class=M>[PK_UNITY_PLUGIN]> Reloading OK "Particles/JukeBall.pkfx"</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\BlastPack_Extended.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/BlastPack_Extended.png) : 21.131 ms</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 000000004CB747A8 buffers from maxverts=0, maxind=0 to maxvert=152, maxind=164 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 000000004CB742D8 buffers from maxverts=0, maxind=0 to maxvert=146, maxind=155 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\BlastPack_Extended_Normal.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/BlastPack_Extended_Normal.png) : 15.405 ms</div>
+<div class=W>[PK_UNITY_PLUGIN]> Performance warning: Texture has no mipmaps (Textures\BlastPack_Extended.png)</div>
+<div class=M>[KR_PROFILER]> Loaded 2D Texture (Textures/BlastPack_Extended.png) : 20.697 ms</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 000000004CB78638 buffers from maxverts=0, maxind=0 to maxvert=146, maxind=155 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=M>[PK_UNITY_PLUGIN]> Growing FxMesh 000000004CB78638 buffers from maxverts=146, maxind=155 to maxvert=284, maxind=362 (IFORMAT=DXGI_FORMAT_R16_UINT) (COLORS=FLOAT4)</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
+<div class=W>[PK_UNITY_PLUGIN]> Pack "Assets/StreamingAssets/PackFx" already loaded.</div>
