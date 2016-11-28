@@ -29,37 +29,54 @@ public class onMyCompany : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //計算研發進度
-        myProjectTitle_text.text = "Project" + myProjectID.ToString()+"_研發進度";
-        myK_text.text = "：" + myKCounter.ToString() + "K";
-        if (myProjectDevelopEFF_image.fillAmount == 1){
-            //賺錢囉！
-            myCompanyMoney += 20;
-            //把研發進度條歸零，要研發新的產品了
-            myProjectDevelopEFF_image.fillAmount = 0;
-            //專案代號+1
-            myProjectID++;
-            //講一句屁話
-            print("產品" + myProjectID.ToString() + "研發好了");
-        }
-        else {myProjectDevelopEFF_image.fillAmount += Time.deltaTime * myProjectDevelopEFF;}
+        if (GameObject.Find("myGameManager").GetComponent<onMyGameManager>().isGameStar)
+        {
+            if (GameObject.Find("IamBossVer2").GetComponent<onMyController>().isQKTime) {
+                myProjectDevelopEFF_image.fillAmount -= Time.deltaTime * myProjectDevelopEFF*0.9f;
+            }
+            else {
+                //計算研發進度
+                myProjectTitle_text.text = "Project" + myProjectID.ToString() + "_研發進度";
+                myK_text.text = "：" + myKCounter.ToString() + "K";
+                if (myProjectDevelopEFF_image.fillAmount == 1)
+                {
+                    //賺錢囉！
+                    myCompanyMoney += 20;
+                    //把研發進度條歸零，要研發新的產品了
+                    myProjectDevelopEFF_image.fillAmount = 0;
+                    //專案代號+1
+                    myProjectID++;
+                    //講一句屁話
+                    print("產品" + myProjectID.ToString() + "研發好了");
+                    GameObject.Find("myGameManager").GetComponent<onMyGameManager>().isGameStar = false;
+                    GameObject.Find("myGameManager").GetComponent<onMyGameManager>().isNeedToShowProjectMessage = true;
+                }
+                else { myProjectDevelopEFF_image.fillAmount += Time.deltaTime * myProjectDevelopEFF; }
+            }
+            
 
-        //計算員工數量
-        int chilecount = transform.GetChildCount();
-        myEmployeeCount_text.text = "員工人數：" + chilecount.ToString();
+            //計算員工數量
+            int chilecount = transform.GetChildCount();
+            myEmployeeCount_text.text = "員工人數：" + chilecount.ToString();
 
-        //公司資金檢查
-        if (myCompanyMoney_image.fillAmount == 0) {
-            print("公司倒閉囉～");
+            //公司資金檢查
+            if (myCompanyMoney_image.fillAmount == 0)
+            {
+                print("公司倒閉囉～");
+            }
+            else {
+                if (myCompanyMoney > myCompanyValue)
+                {
+                    myCompanyValue = myCompanyMoney;
+                }
+                myCompanyMoney -= Time.deltaTime;
+                myCompanyMoney_image.fillAmount = (float)myCompanyMoney / (float)myCompanyValue;
+            }
         }
         else {
-            if (myCompanyMoney > myCompanyValue)
-            {
-                myCompanyValue = myCompanyMoney;
-            }
-            myCompanyMoney -= Time.deltaTime;
-            myCompanyMoney_image.fillAmount = (float)myCompanyMoney / (float)myCompanyValue;
+
         }
+        
 
         
     }

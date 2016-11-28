@@ -11,7 +11,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: LTECL
-  productName: "\u9B3C\u5CF6\u53F0\u7063\u6211\u7684\u809D"
+  productName: TakeCareLiver
   defaultCursor: {fileID: 2800000, guid: be1bf6c15b9993542b6ead8b7ff87603, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21176471, a: 1}
@@ -116,7 +116,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleIdentifier: com.LTECL.whereismybone
+  bundleIdentifier: com.LTECL.TakeCareLiver
   bundleVersion: 1.0
   preloadedAssets: []
   metroInputSource: 0

@@ -51,61 +51,62 @@ public class onMyController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        myEmployeeFollowPoint.transform.rotation = gameObject.transform.rotation;
-
-        if (isAutoHuntPeople_toggle.isOn)
-        {//開始獵才
-            if (isQKTime)
-            {
-                if (findallqkobject.Length == 0)
+        if (GameObject.Find("myGameManager").GetComponent<onMyGameManager>().isGameStar) {
+            myEmployeeFollowPoint.transform.rotation = gameObject.transform.rotation;
+            if (isAutoHuntPeople_toggle.isOn)
+            {//開始獵才
+                if (isQKTime)
                 {
-                    speed = 8;
-                    isQKTime = false;
+                    if (findallqkobject.Length == 0)
+                    {
+                        speed = 8;
+                        isQKTime = false;
+                    }
+                    if (myTarget == null) { myFindQKObjectFN(); }
+                    else {
+                        transform.LookAt(myTarget.transform);
+                        //transform.position = Vector3.Lerp(transform.position, myTarget.transform.position, Time.deltaTime * speed);
+                        transform.position = Vector3.MoveTowards(transform.position, myTarget.transform.position, Time.deltaTime * speed);
+                    }
                 }
-                if (myTarget == null) { myFindQKObjectFN(); }
                 else {
-                    transform.LookAt(myTarget.transform);
-                    //transform.position = Vector3.Lerp(transform.position, myTarget.transform.position, Time.deltaTime * speed);
-                    transform.position = Vector3.MoveTowards(transform.position, myTarget.transform.position, Time.deltaTime * speed);
+                    //------
+                    if (findallunEmployment.Length == 0 || myTarget == null) { myFindEmployeeFN(); }
+                    if (myTarget != null)
+                    {
+                        transform.LookAt(myTarget.transform);
+                        //transform.position = Vector3.Lerp(transform.position, myTarget.transform.position, Time.deltaTime * speed);
+                        transform.position = Vector3.MoveTowards(transform.position, myTarget.transform.position, Time.deltaTime * speed);
+                    }
+                    //-----
                 }
             }
             else {
-                //------
-                if (findallunEmployment.Length == 0|| myTarget == null) { myFindEmployeeFN(); }
-                if (myTarget != null)
+                if (isQKTime)
                 {
-                    transform.LookAt(myTarget.transform);
-                    //transform.position = Vector3.Lerp(transform.position, myTarget.transform.position, Time.deltaTime * speed);
-                    transform.position = Vector3.MoveTowards(transform.position, myTarget.transform.position, Time.deltaTime * speed);
+                    if (findallqkobject.Length == 0)
+                    {
+                        speed = 8;
+                        isQKTime = false;
+                    }
+                    if (myTarget == null) { myFindQKObjectFN(); }
+                    else {
+                        transform.LookAt(myTarget.transform);
+                        //transform.position = Vector3.Lerp(transform.position, myTarget.transform.position, Time.deltaTime * speed);
+                        transform.position = Vector3.MoveTowards(transform.position, myTarget.transform.position, Time.deltaTime * speed);
+                    }
                 }
-                //-----
-            }
-            
-        }
-        else {
-            if (isQKTime)
-            {
-                if (findallqkobject.Length == 0)
-                {
-                    speed = 8;
-                    isQKTime = false;
-                }
-                if (myTarget == null) { myFindQKObjectFN(); }
                 else {
-                    transform.LookAt(myTarget.transform);
-                    //transform.position = Vector3.Lerp(transform.position, myTarget.transform.position, Time.deltaTime * speed);
-                    transform.position = Vector3.MoveTowards(transform.position, myTarget.transform.position, Time.deltaTime * speed);
+                    if (isAutoMoveForword)
+                    {
+                        myAutoMoveForwordFN();
+                        myInputFN();
+                    }
+                    else { myControllFN(); }
                 }
-            }
-            else {
-                if (isAutoMoveForword)
-                {
-                    myAutoMoveForwordFN();
-                    myInputFN();
-                }
-                else { myControllFN(); }
             }
         }
+        else {}
     }
     public void myControllFN() {
         float translation = Input.GetAxis("Vertical") * speed;

@@ -89,36 +89,45 @@ public class onEmployee : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (isNeedToSaySomething) {
-            if (mySaySomethingTimer > mySaySomethingTime) {
-                mySaySomethingTimer = 0;
-                isNeedToSaySomething = false;
+        if (GameObject.Find("myGameManager").GetComponent<onMyGameManager>().isGameStar) {
+            if (isNeedToSaySomething)
+            {
+                if (mySaySomethingTimer > mySaySomethingTime)
+                {
+                    mySaySomethingTimer = 0;
+                    isNeedToSaySomething = false;
+                }
+                else {
+                    mySaySomethingTimer += Time.deltaTime;
+                }
             }
             else {
-                mySaySomethingTimer += Time.deltaTime;
-            }
-        }
-        else {
-            if (myTarget) {
-                myBoard_Liver.GetComponent<onLiverBoard>().myMessage_text.text = "員工" + myID.ToString();// + "K";
-            }
-            else {
-                myBoard_Liver.GetComponent<onLiverBoard>().myMessage_text.text = "人才"+myK.ToString()+"K";
-            }
-            
-        }
+                if (myTarget)
+                {
+                    myBoard_Liver.GetComponent<onLiverBoard>().myMessage_text.text = "員工" + myID.ToString();// + "K";
+                }
+                else {
+                    myBoard_Liver.GetComponent<onLiverBoard>().myMessage_text.text = "人才" + myK.ToString() + "K";
+                }
 
-        myModControllFN();
-        //if (isNeedToFollow && Input.anyKey)
-        if (myTalkRandomTimer > myTalkRandomTime)
-        {
-            myTalkRandomTimer = 0;
-            myTalkRandom = Random.Range(0, 101);
+            }
+
+            myModControllFN();
+            //if (isNeedToFollow && Input.anyKey)
+            if (myTalkRandomTimer > myTalkRandomTime)
+            {
+                myTalkRandomTimer = 0;
+                myTalkRandom = Random.Range(0, 101);
+            }
+            else {
+                myTalkRandomTimer += Time.deltaTime;
+            }
+            myTalkRandomFN();
         }
         else {
-            myTalkRandomTimer += Time.deltaTime;
+
         }
-        myTalkRandomFN();
+        
     }
     public void myModControllFN() {
         if (myTarget)
@@ -258,7 +267,9 @@ public class onEmployee : MonoBehaviour {
         if (myTalkRandom > 50) {
             isNeedToSaySomething = true;
             if (myTarget) {
-                myBoard_Liver.GetComponent<onLiverBoard>().myMessage_text.text = "豪想放假QAQ";
+                if (myMod == 3) { myBoard_Liver.GetComponent<onLiverBoard>().myMessage_text.text = "豪爽喔！"+"\n"+"拉拉拉～"; }
+                else { myBoard_Liver.GetComponent<onLiverBoard>().myMessage_text.text = "豪想放假QAQ"; }
+                
             }
             else {
                 myBoard_Liver.GetComponent<onLiverBoard>().myMessage_text.text = "工作真難找...";
