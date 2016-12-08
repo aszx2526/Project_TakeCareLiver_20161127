@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class onMoney : MonoBehaviour {
-    
+    [Header("K數")]
+    public int myKValue;
+    public GameObject myTarget;
+    public float myMoveSpeed;
     // Use this for initialization
     void Start()
     {
@@ -17,5 +20,8 @@ public class onMoney : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if (myTarget) {
+            transform.position = Vector3.Lerp(transform.position, myTarget.transform.position, Time.deltaTime * myMoveSpeed);
+        }
     }
 }

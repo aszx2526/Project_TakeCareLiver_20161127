@@ -19,7 +19,7 @@ public class onSocialForCreatEmployee : MonoBehaviour {
 	void Update () {
         if (GameObject.Find("unemployment") == null) { myNoJobManCreaterFN(); }
         //myMoneyCounterFN();
-        if (myMoneyCounter < 50){myMoneyCreater_FN();}
+        if (myMoneyCounter < 3){myMoneyCreater_FN();}
     }
     public void myNoJobManCreaterFN() {
         int a = Random.Range(0, 11);
@@ -69,7 +69,7 @@ public class onSocialForCreatEmployee : MonoBehaviour {
         }
     }
     public void myMoneyCreater_FN() {
-        for (int a = 0; a < 10; a++) {
+      //  for (int a = 0; a < 10; a++) {
             myMoneyCounter++;
             Vector3 spawnPoint = gameObject.transform.position;
             spawnPoint.y = 0.75f;
@@ -77,6 +77,6 @@ public class onSocialForCreatEmployee : MonoBehaviour {
             spawnPoint.z = Random.Range(spawnPoint.z - gameObject.transform.localScale.z / 2 * 0.9f, spawnPoint.z + gameObject.transform.localScale.z / 2 * 0.9f);
             GameObject money =  Instantiate(myMoney, spawnPoint, gameObject.transform.rotation)as GameObject;
             money.transform.parent = GameObject.Find("myMoneyManager").transform;
-        }
+       // }
     }
 }

@@ -98,7 +98,7 @@ public class onPlayerTrigger : MonoBehaviour {
                 //GameObject.Find("myobjectCreater").GetComponent<onSocialForCreatEmployee>().SendMessage("myMoneyCounterFN");
                 //myFather.GetComponent<onMyController>().myCompany.GetComponent<onMyCompany>().myCompanyMoney += other.GetComponent<onMoney>().myMoneyValue;
                 GameObject.Find("myobjectCreater").GetComponent<onSocialForCreatEmployee>().myMoneyCounter--;
-                myFather.GetComponent<onMyController>().myCompany.GetComponent<onMyCompany>().myKCounter++;
+                myFather.GetComponent<onMyController>().myCompany.GetComponent<onMyCompany>().myKCounter+=other.GetComponent<onMoney>().myKValue;
                 Destroy(other.gameObject);
                 break;
             default:
